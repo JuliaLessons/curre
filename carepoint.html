@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en,ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="carepoint.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto:400,500,700,900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Playfair+Display:400,400i&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700|Open+Sans:400,700|Playfair+Display:400,400i&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
+    <title>carepoint</title>
+</head>
+
+<body>
+    <div class="content"></div>
+    <header class="header">
+        <div class=" content header__inner">
+            <div class="content header__inner_top">
+                <div class="logo">
+                    <a href="#">
+                        <svg class="logo_svg" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" width="210" height="42" viewBox="0 0 210 42">
+                            <g>
+                                <g>
+                                    <image width="210" height="42"
+                                        xlink:href="data:image/png;base64,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" />
+                                </g>
+                            </g>
+                        </svg>
+                    </a>
+                </div>
+                <div class=" header__contacts">
+                    <div class="header__contact_time">
+                        <button class=" header__button" type="submit"> <i class="fa fa-clock-o"></i></button>
+                        <div class="contact"> <span class="contact-title"> WORK TIME: 09:00 - 17:00<br></span>
+                            <span class="contact-info"> Saturday and Sunday - CLOSED</span></div>
+                    </div>
+                    <div class="header__contact_mail">
+                        <button class="header__button" type="submit"> <i class="fa fa-envelope"></i></button>
+                        <div class="contact"><span class="contact-title">MAIL US<br></span>
+                            <span class="contact-info"><a href="#"> free@psd.in.ua</a></span></div>
+                    </div>
+                    <div class="header__contact_telephon">
+                        <button class=" header__button" type="submit"> <i class="fa fa-mobile"></i></button>
+                        <div class="contact"><span class="contact-title">CALL US<br></span>
+                            <span class="contact-info"><a href="tel:+12345678900"> +123 4567 8900</a></span></div>
+                    </div>
+                </div>
+            </div>
+            <hr class="content">
+            <div class="content header__inner_bottom">
+                <div class=" header__menu">
+                    <div class="nav">
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Gallery</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a id="last" href="#">Contact us</a></li>
+                        </ul>
+                    </div>
+                    <div class="header__icon">
+                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                        <a href="#"> <i class="fa fa-vk" aria-hidden="true"></i></a>
+                        <a href="#"> <i class="fa fa-youtube" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <section class="section-title">
+        <div class=" content section-title__text">
+            <div class="elements">
+                <h1>We have Best Medicare<br>
+                    plan options for you </h1>
+                <span class="span-text">Sed ut perspiciatis unde omnis iste natus error sit vo-<br>luptatem accusantium
+                    doloremque laudantium.</span> <br>
+                <button class="button_read-more" type="submit">Read more</button>
+            </div>
+        </div>
+    </section>
+    <section class="description-points">
+        <div class="point-treatment">
+            <button class="button button_color" type="submit"><img src="images/treatment.png"></button>
+            <h3>Best Treatment</h3>
+            <span class="span-text">Sed ut perspiciatis unde omnis iste<br> natus error sit voluptatem accusan-<br>tium
+                doloremque laudantium.</span>
+        </div>
+        <div class="point-help">
+            <button class="button button_color" type="submit"><img src="images/help.png"></button>
+            <h3>Emergency Help</h3>
+            <span class="span-text">Sed ut perspiciatis unde omnis iste<br> natus error sit voluptatem accusan-<br>tium
+                doloremque laudantium.</span>
+        </div>
+        <div class="point-staff">
+            <button class="button button_color" type="submit"><img src="images/staff.png"></button>
+            <h3>Medical Staff</h3>
+            <span class="span-text">Sed ut perspiciatis unde omnis iste<br> natus error sit voluptatem accusan-<br>tium
+                doloremque laudantium.</span>
+        </div>
+        <div class="point-doctors">
+            <button class="button button_color" type="submit"><img src="images/doctors.png"></button>
+            <h3>Qualified Doctors</h3>
+            <span class="span-text">Sed ut perspiciatis unde omnis iste<br> natus error sit voluptatem accusan-<br>tium
+                doloremque laudantium.</span>
+        </div>
+
+    </section>
+    <section class="section-reasons">
+        <div class="content">
+            <h2>Why Choose Us ?</h2>
+            <p class="span-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                laudantium, totam rem aperi-<br>am, eaque ipsa quae ab illo inventore veritatis et quasi architecto
+                beatae vitae dicta sunt explicabo. </p>
+            <div class="reasons">
+                <div class="reason">
+                    <figure>
+                        <div class="reasons_icon"><img src="images/reason1.png"></div>
+                        <h3>Professional</h3>
+                    </figure>
+
+                    <span class="span-text">Sed ut perspiciatis unde omnis iste natus error<br> sit voluptatem
+                        accusantium doloremque laudan-<br>tium.</span>
+
+                    <figure>
+                        <div class="reasons_icon"><img src="images/reason2.png"></div>
+                        <h3>Professional</h3>
+                    </figure>
+                    <span class="span-text">Sed ut perspiciatis unde omnis iste natus error<br> sit voluptatem
+                        accusantium doloremque laudan-<br>tium.</span>
+                </div>
+
+                <div class="reasons_img">
+                    <img src="images/layer.png" alt="oops!">
+                </div>
+                <div class="reason">
+                    <figure>
+                        <div class="reasons_icon"><img src="images/reason3.png"></div>
+                        <h3>Professional</h3>
+                    </figure>
+                    <span class="span-text">Sed ut perspiciatis unde omnis iste natus error<br> sit voluptatem
+                        accusantium doloremque laudan-<br>tium.</span>
+                    <figure>
+                        <div class="reasons_icon"><img src="images/reason4.png"></div>
+                        <h3>Professional</h3>
+                    </figure>
+                    <span class="span-text">Sed ut perspiciatis unde omnis iste natus error<br> sit voluptatem
+                        accusantium doloremque laudan-<br>tium.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-statistics">
+        <div class="content statistics">
+            <div class="data">
+                <img class="sign" src="images/customers.png"><br>
+                <span id="number">1000+</span><br>
+                <svg xmlns="http://www.w3.org/2000/svg" width="84" height="6" viewBox="0 0 84 6">
+                    <g>
+                        <g>
+                            <path fill="#fff" d="M0 0h83.156v6H0z" />
+                        </g>
+                    </g>
+                </svg><br>
+                <h4>Happy<br>
+                    Customers</h4>
+            </div>
+            <div class="data">
+                <img class="sign" src="images/hospitality.png"><br>
+                <span id="number">2017</span><br>
+                <svg xmlns="http://www.w3.org/2000/svg" width="84" height="6" viewBox="0 0 84 6">
+                    <g>
+                        <g>
+                            <path fill="#fff" d="M0 0h83.156v6H0z" />
+                        </g>
+                    </g>
+                </svg><br>
+                <h4>Top<br>
+                    Hospitality</h4>
+            </div>
+            <div class="data">
+                <img class="sign" src="images/approach.png"><br>
+                <span id="number">1105</span><br>
+                <svg xmlns="http://www.w3.org/2000/svg" width="84" height="6" viewBox="0 0 84 6">
+                    <g>
+                        <g>
+                            <path fill="#fff" d="M0 0h83.156v6H0z" />
+                        </g>
+                    </g>
+                </svg><br>
+                <h4>Innovative<br>
+                    Approach</h4>
+            </div>
+            <div class="data">
+                <img class="sign" src="images/replacement.png"><br>
+                <span id="number">500+</span><br>
+                <svg xmlns="http://www.w3.org/2000/svg" width="84" height="6" viewBox="0 0 84 6">
+                    <g>
+                        <g>
+                            <path fill="#fff" d="M0 0h83.156v6H0z" />
+                        </g>
+                    </g>
+                </svg><br>
+                <h4>Lung<br>
+                    Replacement</h4>
+            </div>
+        </div>
+    </section>
+    <article class="article">
+        <div class=" content article__inner">
+            <div class="article__block1">
+                <div class="article_title">
+                    <h2>How we works</h2>
+                    <span class="span-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                        doloremque laudan-<br>tium.Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                        accusantium doloremque laudantium.</span>
+                </div>
+                <div class="events">
+                    <p class="events_paragraph">
+                        <img src="images/photo1.jpg">
+                        <span class="news">Lorem ipsum dolor sit amet,</span><br>
+                        <span class="news-data">April 19, 2017 | Dr. Jon Doe</span><br>
+
+                        <span class="span-text">Sed ut perspiciatis unde omnis iste natus<br> error sit voluptatem
+                            accusantium dolorem-<br>que laudantium.</span>
+                    </p>
+                    <p class="events_paragraph">
+                        <img src="images/photo2.jpg">
+                        <span class="news">Lorem ipsum dolor sit amet,</span><br>
+                        <span class="news-data">April 19, 2017 | Dr. Jon Doe</span><br>
+                        <span class="span-text">Sed ut perspiciatis unde omnis iste natus<br> error sit voluptatem
+                            accusantium dolorem-<br>que laudantium.</span>
+                    </p>
+                </div>
+                <div class="article_button">
+                    <button class="button_read-more button_read-more_size_s" type="submit">Read more</button></div>
+            </div>
+            <div class="article__block2">
+                <h2> Our creative</h2>
+                <span class="span-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                    doloremque laudantium.Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                    doloremque laudantium.</span>
+
+                    <div id="accordion">
+                        <div class="accordion-item">
+                            <button class="list_consealed accordion-item-button" v-on:click="accordion" type="button"><i class="fa fa-caret-right"
+                                    aria-hidden="true"></i>Heart Treatment</button>
+                            <span class="span-text accordion-item-body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                accusantium
+                                doloremque laudantium.Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                accusantium
+                                doloremque laudantium.</span>
+                        </div>
+                        <div class="accordion-item">
+                            <button class="list_consealed accordion-item-button" v-on:click="accordion" type="button"><i
+                                    class="fa fa-caret-right" aria-hidden="true"></i>Heart Treatment</button>
+                            <span class="span-text accordion-item-body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                accusantium
+                                doloremque laudantium.Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                accusantium
+                                doloremque laudantium.</span>
+                        </div>
+                        <div class="accordion-item">
+                            <button class="list_consealed accordion-item-button" v-on:click="accordion" type="button"><i
+                                    class="fa fa-caret-right" aria-hidden="true"></i>Heart Treatment</button>
+                            <span class="span-text accordion-item-body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                accusantium
+                                doloremque laudantium.Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                accusantium
+                                doloremque laudantium.</span>
+                        </div>
+                        <div class="accordion-item">
+                            <button class="list_consealed accordion-item-button" v-on:click="accordion" type="button"><i
+                                    class="fa fa-caret-right" aria-hidden="true"></i>Heart Treatment</button>
+                            <span class="span-text accordion-item-body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                accusantium
+                                doloremque laudantium.Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                accusantium
+                                doloremque laudantium.</span>
+                        </div>
+                    </div>
+
+        </div>
+    </article>
+    <section class="gallery">
+        <div class="content gallery__inner">
+
+            <h2>Gallery</h2>
+            <span class="span-text"> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                doloremque laudantium.Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                doloremque laudantium.</span>
+            <div class="photo">
+                <img src="images/gallery1.jpg" alt="oops!">
+                <img src="images/gallery2.jpg" alt="oops!">
+                <img src="images/gallery3.jpg" alt="oops!">
+                <img src="images/gallery4.jpg" alt="oops!">
+                <img src="images/gallery5.jpg" alt="oops!">
+                <img src="images/gallery6.jpg" alt="oops!">
+            </div>
+        </div>
+    </section>
+    <section class="team">
+        <h2>Our Team</h2>
+        <div class="content">
+            <span class="span-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                doloremque laudantium.Sed ut perspiciatis unde omnis iste natus error<br> sit voluptatem accusantium
+                doloremque laudantium.</span>
+            <div class="members">
+                <figure>
+                    <img src="images/assistant1.png" alt="Oops!" />
+                    <figcaption>
+                        <p class="member-name">Dr Ricky Doe</p>
+                        <p class="member-role">Assistant Surgeon</p>
+                        <p class="contact_link"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                            <a href="#"> <i class="fa fa-vk" aria-hidden="true"></i></a> </p>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <img src="images/assistant2.png" alt="Oops!" />
+                    <figcaption>
+                        <p class="member-name">Dr Ricky Doe</p>
+                        <p class="member-role">Assistant Surgeon</p>
+                        <p class="contact_link"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                            <a href="#"> <i class="fa fa-vk" aria-hidden="true"></i></a> </p>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <img src="images/assistant3.png" alt="Oops!" />
+                    <figcaption>
+                        <p class="member-name">Dr Ricky Doe</p>
+                        <p class="member-role">Assistant Surgeon</p>
+                        <p class="contact_link"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                            <a href="#"> <i class="fa fa-vk" aria-hidden="true"></i></a> </p>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <img src="images/assistant4.png" alt="Oops!" />
+                    <figcaption>
+                        <p class="member-name">Dr Ricky Doe</p>
+                        <p class="member-role">Assistant Surgeon</p>
+                        <p class="contact_link"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                            <a href="#"> <i class="fa fa-vk" aria-hidden="true"></i></a> </p>
+                    </figcaption>
+                </figure>
+            </div>
+    </section>
+    <section class="consultation">
+        <div class="content consultation__inner">
+            <span>New Patient Special Offer Complimentary Consultation</span>
+            <button class="button_read-more button_read-more_size_b" type="submit">Read more</button>
+        </div>
+        </div>
+    </section>
+    <footer>
+        <div class="content footer__inner">
+            <div class="column1">
+                <h4>Get in Touch </h4>
+                <div class="inform">
+                    <a href="#"> <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="40" height="31" viewBox="0 0 40 31">
+                            <g>
+                                <g opacity=".51">
+                                    <image width="40" height="31"
+                                        xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAfCAYAAACVgY94AAADWklEQVRYR+2YX2gUVxTGvzOT7qYGDWGlhT4UFYpPStOXkjale+9s1q6JGh82pdAi1L4IRRRaarVUK/6jCg1B6IsKYqHUfVBrdNvNzr1Tmjb0xah9KgUtPggtu0grabPrzhy5sitRE3eT3ZgUct9muOe7v/vNOXdmDgGA4zg9zLwfwGpzPQ/GVSLa5bruIEkp1wH4FsAfAM4C+HuOAVsB9AJYBmC9AbzCzItt224fGxsrjoyM/DeXgB0dHU+3tLSEfN8fJaLbBpAB9IfD4R2FQiHHzBeam5s3pdPpwpMETSQS4fHx8ZNE1B0Oh5cWCoVDALZVAD9TSu2RUh4G8AGAn4Ig6PU8L/ckIKPR6FLLskx6vQrgiFLqQynlHgC7HwA0MFLKLQCOArjOzN1a699mE1IIsZKILgBYDuB9pdSXZY7JActV/QYznwZwh4h6Xdf9cTYgHcd5jZmNc08RUZ/rut9V1pnSwcqEaDT6omVZ5wE8S0Tvuq77VSMhHcd5m5lPAPgzCIJ1nuddnqhfFdBM7urqes73/UEA7cz8qdZ6HwBTVPUMEkJ8QkR7AYzatt0zNDR082HBmgBNUDweb/F9/xuTjwBORSKR91KpVHEmhMlkMpTP548BeMfknW3bb2YymbHJtGoGNMHJZNLO5/P9JokB/FAsFjcODw/fmg5kZ2dnWygUOgPgdVOEkUhkWyqV8qfSmBZgRUQIsZWIvgDwOxGtdV33Wi2QjuOsYOaLAF5g5u1a64FqcTMCNKJCiPVE9DWAfwFsUEr9/LjFpJSvADgHYBEzv6W1Nq/VqmPGgOUz6iUiGmTmNmbepLU2R9IjQwjRR0Tm7XCLmXuUUpeqkpUn1AVoNGKx2PNBEJgKX8XMO7XWBycuLoT4mIgOAPjVsqyebDZ7o1a4sglTH9S1CiUSiSXFYvE0M68BkGLm4yaWiDab2iKi70OhUF86nf6nVs3KvLodrAiZCs/lcp8T0VYATeX7JWYeYOaPPM8rTReuYQ5OXDgejz9TKpVeNveampp+yWQyf80ErOEO1gNRpfrrz8HZgpuVR9xo2IYVSaPBFnKwUY4uPOJ6nfzfOdivlNpe764bGS+lNN+d9/6L73cWstnsXLc97u0xFou1TuwszO/ejCGez92tu5z42MBzdm1CAAAAAElFTkSuQmCC" />
+                                </g>
+                            </g>
+                        </svg></a>
+                    <span><a href="#">free@psd.in.ua</a><br>
+                        <a href="#"> free@psd.in.ua</a></span>
+                </div>
+                <div class="inform">
+                    <a href="#"> <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="27" height="40" viewBox="0 0 27 40">
+                            <g>
+                                <g opacity=".51">
+                                    <image width="27" height="40"
+                                        xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAoCAYAAAAPOoFWAAABN0lEQVRYR+2YsUrFMBSGv9yhq3pHX0AnB1c7JZMgqIhv4CaoDyB4EV/gLm7i5qLgIjhI06Wugro7Ourg1qFHUgx4iyiWtCKkW4eer+fLT8iJAtBaLwNHwKJ7D/zcAfvW2mv1AboCnoFL4CUgbAisA7PAioPdA8OyLBeKongNCKpLpWk6kyTJg2vCwUQpdZxl2XZokK9njBmLyE4NA8bW2r2uYFrrEXDgYW+B16r539PAlIc9KaUeu+pMROaBuT/R2OuaRVirDDWjHzVGjRMGYkBaBaL5UdQYNX5rIAbk/wfkBjgL0sYXRZRSayKy6o9yXXEm6nrYaVVVh10RB4OBO9rvxkNqbdgYcyIiG163iFzkeb71k/5WO4jWehNY+lT81lp7/itYn8Ngr2OuuynoZ4B3vvu6mngHo1Qfrl6DlGwAAAAASUVORK5CYII=" />
+                                </g>
+                            </g>
+                        </svg></a>
+                    <span>
+                        <a href="tel+1234567890">+123 456 7890</a><br>
+                        <a href="tel+1234567890"> +123 456 7890</a>
+                    </span>
+                </div>
+                <div class="inform_address">
+                    <a href="#"> <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="38" height="40" viewBox="0 0 38 40">
+                            <g>
+                                <g opacity=".51">
+                                    <image width="38" height="40"
+                                        xlink:href="data:image/png;base64,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" />
+                                </g>
+                            </g>
+                        </svg></a>
+                    <span><a href="#"> 123, Main Road, New City,<br> My Country 123456</a></span>
+                </div>
+                <div>
+                    <div class="footer__icon">
+                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                        <a href="#"> <i class="fa fa-vk" aria-hidden="true"></i></a>
+                        <a href="#"> <i class="fa fa-youtube" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="column2">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#">Faq</a></li>
+                    <li><a href="#">Insurance</a></li>
+                    <li><a href="#">Contact us</a></li>
+                </ul>
+            </div>
+            <div class="column3">
+                <h4>Our Services</h4>
+                <ul>
+                    <li><a href="#">Work Injuries</a></li>
+                    <li><a href="#">Sport Injuries</a></li>
+                    <li><a href="#">Cold Laser Therapy </a></li>
+                    <li><a href="#">Massage Therapy</a></li>
+                    <li><a href="#">Physiotherapy</a></li>
+                    <li><a href="#">Chiropratic Therapy</a></li>
+                </ul>
+            </div>
+            <div class="column4">
+                <h4>Enquiry Form</h4>
+                <form method="post" action="">
+                    <input type="text" placeholder="Name"><br>
+                    <input name="telephon" type="text" placeholder="Phone"> <br>
+                    <textarea name="comment" cols="40" rows="5" placeholder="Massage"></textarea></p>
+                    <button class="button_read-more button_submit" type="submit">SUBMIT</button>
+                </form>
+            </div>
+        </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>
